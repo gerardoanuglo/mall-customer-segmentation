@@ -21,15 +21,16 @@ Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/heeraldedhia/groce
 
 ### Exploring The Data
 
-Since this dataset was relatively small and organized, there wasn't much cleaning. With this in mind, I will go straight to the initial data exploration.
+Since this dataset was relatively small and organized, there wasn't much cleaning. We checked for duplicate customers, nulls, errors in data values for columns ID, Income, and Spending Score. I changed column names to be clear and concise. Lastly I checked the data types of all columns to confirm there was no errors. 
+With this in mind, I will go straight to the initial data exploration.
 
-First, I wanted to get a understanding of the data. Using the describe function was my first attempt.
+First, I wanted to get a understanding of the data. I used the describe function to identify value ranges and averages for key metrics.
 
 <img width="638" alt="Screenshot 2022-12-01 at 3 04 22 PM" src="https://user-images.githubusercontent.com/85320743/205177612-b544feab-2f95-4317-a7c0-4f657c8b8317.png">
 
-The average age among these customers is 39 years old with a range from 18 to 70 years old. The average income is 61k with a standard deviation of 26 thousand. The range of income is a minimum of 15k and a max of 137k. Finally, the average spending score is 50 out of 100.
+The average age among these customers is 39 years old with a range from 18 to 70 years old. This indicates the dataset does not account for anyone younger than 18 because minors aren't the ones paying of goods or services. The average income is 61k with a standard deviation of 26 thousand. The range of income is a minimum of 15k and a max of 137k. Finally, the average spending score is 50 out of 100. 
 
-I will check for null values and data types.
+As I mentioned before, I checked for null values and data types.
 
 <img width="513" alt="Screenshot 2022-12-01 at 3 09 08 PM" src="https://user-images.githubusercontent.com/85320743/205178233-83dd0f02-9a58-4036-af7b-bc5dabb9a2bf.png">
 
@@ -47,15 +48,15 @@ At first glance we see 5 groups, but it could be 7 depending on how we consider 
 
 Identifing the best number of clusters will help us avoid plots that look like a single cluster (too few clusters) or look like two clusters are competing for a single densely packed space (too many clusters). 
 
-Let continue with the data exploration.
+Lets continue with the data exploration.
 
-Lets consider the distribution of customers by spending groups. The initial dataset came with the column "Spending Score", a metric derieved prior to this analysis, but in essence measures ones spending habits. In order to create this visualization, I created another column grouping the customers by spending score in intervals of 10.
+Consider the distribution of customers by spending groups. The initial dataset came with the column "Spending Score", a metric derieved prior to this analysis, but in essence measures ones spending habits. In order to create this visualization, I created another column grouping the customers by spending score in intervals of 10.
 
 <img width="459" alt="Screenshot 2022-12-01 at 3 50 10 PM" src="https://user-images.githubusercontent.com/85320743/205183179-616b163d-34c0-4475-b15f-d70c8497bd8a.png">
 
 From this initial visualization we can conclude the majority of customers have a spending score ranging from 40 to 60. Other then this insight, there is no clear distinction of customer groupings here.
 
-Now lets consider the distribution of customer age by spending groups. 
+Now lets consider the average age of customers by spending groups. Please note this visulization below is zoomed in, the y axis starts at 30 and ends at 46. This is to highlight the slight distinction that higher spending groups tend to be on average younger compared to low spending groups. 
 
 <img width="473" alt="Screenshot 2022-12-01 at 3 51 04 PM" src="https://user-images.githubusercontent.com/85320743/205183284-3b5d8f37-bd39-4c59-b36a-76cbceac3c5e.png">
 
@@ -71,15 +72,14 @@ We will standardize data using SKLearns StandardScaler function to ensure all va
 
 ###  Identifing the Best Number of Clusters
 
-Before we can build a KMeans model, we will need to identify the best number for K using the elbow curve method. We won't be visually identifing K because it is to subjective and we won't use the silhouett score because it removes subjectivity from the judgment and is not a very intuitive metric. 
-
-The Elbow Curve helps select the optimal number of clusters for KMeans clustering. How we do this is by iterating through KMean models with different K values and taking the inertia (also known as SSE) from each variation of the KMeans model. With the inertia values we plot them with their corresponding k number. 
+Before we can build a KMeans model, we will need to identify the best number for K using the elbow curve method. We won't be visually identifing K because it is to subjective. We could use the silhouett score, but this method is less intuitive when representing the process. 
+The Elbow Curve helps select the optimal number of clusters for KMeans clustering. How we do this is by iterating through KMean models with different K values and taking the inertia (also known as SSE) from each variation of the KMeans model. With the inertia values we plot them with their corresponding k number. The K where the inertia falls suddenly from the previous point and the points following this K only marginally decrease is the most optimal number of clusters to group customers in.
 
 <img width="900" alt="Screenshot 2022-12-01 at 4 14 25 PM" src="https://user-images.githubusercontent.com/85320743/205185876-48962e21-232a-4f11-a1f1-beb8d04d63ee.png">
 
 <img width="473" alt="Screenshot 2022-12-01 at 4 14 08 PM" src="https://user-images.githubusercontent.com/85320743/205185841-d957ab53-a9e7-445e-a1ad-a79d580280e4.png">
 
-Looking at the graph the elbow of the curve is at k = 5, meaning the most optimal number of clusters to group the customers is 5.
+Looking at the graph the elbow of the curve is at k = 5, meaning 5 is the most optimal number of clusters to group the customers.
 
 ### Building a KMeans Model and Identifing Cluster Designation
 
