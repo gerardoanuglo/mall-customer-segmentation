@@ -1,7 +1,7 @@
 # mall-customer-segmentation
 
 ## Introduction
-  As a data scientist for a marketing company, a new client has recently accquired a mall in Ames Iowa. The owner has contacted us to help identify different groups among the customer demographic. The owner wants to understand the customers so the segments can be given to the marketing team for planning the strategy accurately. The only data we have is from previous owner, were they collected certain metrics about the customers.
+  As a data scientist for a marketing company, a new client has recently accquired a mall in Ames, Iowa. The owner has contacted us to help identify different groups among the customer demographic. The owner wants to understand the customers so the segments can be given to the marketing team for planning the strategy accurately. The only data we have is from previous owner, were they collected certain metrics about the customers.
   
 ### Objective: Create a unsupervised model using the KMeans algorithm to segment customers into the most optimal number of groups based on key metrics given.  
   
