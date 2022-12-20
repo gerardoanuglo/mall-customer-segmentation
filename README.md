@@ -103,7 +103,7 @@ We will group the customers by there clusters and anlayze the mean income and sp
 
 <img width="512" alt="Screenshot 2022-12-01 at 4 27 12 PM" src="https://user-images.githubusercontent.com/85320743/205187311-65cd3402-0ad6-4829-894a-e60d9b43cf12.png">
 
-Here are the mall customer segments. 
+RESULTS:
 
 0.  Penny Pinchers
 
