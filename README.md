@@ -5,7 +5,7 @@
   
 ### Objective: Create a unsupervised model using the KMeans algorithm to segment customers into the most optimal number of groups based on key metrics given.  
   
-Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/heeraldedhia/groceries-dataset)
+Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python)
 
 ## Plan of Action
 1. Import dependencies
