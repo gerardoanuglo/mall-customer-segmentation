@@ -72,7 +72,9 @@ We standardized the data using SKLearns StandardScaler function to ensure all va
 ###  Identifying the Best Number of Clusters
 
 Before the KMeans model was built, we  identified the best number for K using the elbow curve method. We didn’t visually identify K because it is too subjective. We could have used the silhouette score, but it is mathematically rigorous, isn’t subjective, and not intuitive. So in this case we used the Elbow Curve which does involve mathematical calculation, but has some subjectivity built into it and is more intuitive to understand.
-How we do this is by iterating through KMean models with different K values and taking the inertia (also known as SSE) from each variation of the KMeans model. With the inertia values we plot them with their corresponding k number. The K where the inertia falls suddenly from the previous point and the points following this K only marginally decrease is the most optimal number of clusters to group customers in.
+
+
+We do this is by iterating through KMean models with different K values and taking the inertia (also known as SSE) from each variation of the KMeans model. With the inertia values we plot them with their corresponding k number. The K where the inertia falls suddenly from the previous point and the points following this K only marginally decrease is the most optimal number of clusters to group customers in.
 
 <img width="900" alt="Screenshot 2022-12-01 at 4 14 25 PM" src="https://user-images.githubusercontent.com/85320743/205185876-48962e21-232a-4f11-a1f1-beb8d04d63ee.png">
 
