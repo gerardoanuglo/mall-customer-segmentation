@@ -1,7 +1,7 @@
 # mall-customer-segmentation
 
 ## Introduction
-  As a data scientist for a marketing company, a new client has recently accquired a mall in Saint Louis, Missouri and has contacted us to help identify different groups among the customer demographic. The owner wants to understand the customers, so the segments can be given to the marketing team for planning the strategy accurately. The only data we have is from a previous owner, were they collected certain metrics about the customers.
+   As a data scientist for a marketing company, a client has recently acquired a mall in Saint Louis, Missouri and has contacted us to help identify different groups among the customer demographic so the owner can use these segments to accurately plan the marketing strategy. The only data we have is from a previous owner, were they collected certain metrics about the customers.
   
 ### Objective: Create a unsupervised model using the KMeans algorithm to segment customers into the most optimal number of groups based on key metrics given.  
   
@@ -21,7 +21,7 @@ Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/vjchoudhary7/custo
 
 ### Exploring The Data
 
-Since this dataset was relatively small and organized, there wasn't much cleaning. We checked for duplicate customers, nulls, errors in data values for columns ID, Income, and Spending Score. I changed column names to be clear and concise. Lastly, I checked the data types of all columns to confirm there was no errors. 
+Since this dataset was relatively small and organized, there wasn't much cleaning. We checked for duplicate customers, nulls, errors in data values for columns ID, Income, and Spending Score. I changed column names to be clear and concise. Lastly, I checked the data types of all columns to confirm there were no errors. 
 With this in mind, I will go straight to the initial data exploration.
 
 First, I wanted to get a understanding of the data. I used the describe function to identify value ranges and averages for key metrics.
