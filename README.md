@@ -1,6 +1,8 @@
 # mall-customer-segmentation
 
-### Objective: Create an unsupervised model using the KMeans algorithm to segment customers into the most optimal number of groups based on key metrics given.  
+## Objective: 
+
+Create an unsupervised model using the KMeans algorithm to segment customers into the most optimal number of groups based on key metrics given.  
 
 ## Introduction
    As a data scientist for a marketing company, a client has recently acquired a mall in Saint Louis, Missouri and has contacted us to help identify different groups among the customer demographic so the owner can use these segments to accurately plan the marketing strategy. The only data we have is from a previous owner, where they collected certain metrics about the customers.
@@ -19,7 +21,7 @@ Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/vjchoudhary7/custo
 9. Analyze cluster designation based on key metrics (spending score and income)
 10. Understand and describe customer segments. 
 
-### Exploring The Data
+## Exploring The Data
 
 Since this dataset was relatively small and organized, there wasn't much cleaning. We checked for duplicate customers, nulls, errors in data values for columns ID, Income, and Spending Score. I changed column names to be clear and concise. Lastly, I checked the data types of all columns to confirm there were no errors. 
 With this in mind, I will go straight to the initial data exploration.
@@ -69,7 +71,7 @@ We standardized the data using SKLearns StandardScaler function to ensure all va
 
 <img width="820" alt="Screenshot 2022-12-01 at 4 06 26 PM" src="https://user-images.githubusercontent.com/85320743/205185012-9b54fc32-c507-47c2-b7fb-653a922aa673.png">
 
-###  Identifying the Best Number of Clusters
+##  Identifying the Best Number of Clusters
 
 Before the KMeans model was built, we  identified the best number for K using the elbow curve method. We didn’t visually identify K because it is too subjective. We could have used the silhouette score, but it is mathematically rigorous, isn’t subjective, and not intuitive. So in this case we used the Elbow Curve which does involve mathematical calculation, but has some subjectivity built into it and is more intuitive to understand.
 
@@ -80,9 +82,9 @@ We do this is by iterating through KMean models with different K values and taki
 
 <img width="473" alt="Screenshot 2022-12-01 at 4 14 08 PM" src="https://user-images.githubusercontent.com/85320743/205185841-d957ab53-a9e7-445e-a1ad-a79d580280e4.png">
 
-Looking at the graph the elbow of the curve is at k = 5, meaning 5 is the most optimal number of clusters to group the customers.
+### 5 is the most optimal number of clusters to group the customers because the elbow of the curve is at k = 5.
 
-### Building a KMeans Model and Identifying Cluster Designation
+## Building a KMeans Model and Identifying Cluster Designation
 
 We then created a function that builds a KMeans model using our input of k and data. The function returned the data with a new column containing the clusters found. In the table below the cluster designation is called the class.
 
@@ -96,15 +98,13 @@ To visualize our segmented customers, the class was used as the color for the da
 
 The 5 clusters are almost completely distinct from one another. However the central cluster and the upper left cluster have a few points close to each other. 
 
-### Analyzing Cluster Designation Based on Key Metrics.
-
-(spending score and income)
+## Analyzing Cluster Designation Based on Key Metrics.
 
 The customers were grouped by their clusters and analyzed by their mean income and spending score to uncover insights about the groups. 
 
 <img width="512" alt="Screenshot 2022-12-01 at 4 27 12 PM" src="https://user-images.githubusercontent.com/85320743/205187311-65cd3402-0ad6-4829-894a-e60d9b43cf12.png">
 
-RESULTS:
+# RESULTS:
 
 0.  Penny Pinchers
 
@@ -126,8 +126,7 @@ Our over spenders are typically in their twenties. They don't make much, but spe
 
 Lastly our old average joes, these customers are a lot older and make less than the average person. Nevertheless they still live within their means by spending less than they make. 
 
-### Conclusion
-
+## Conclusion
 We helped the mall gain a better understanding of its customers to enable better targeting and boost sales by identifying the optimal number of groups and by segmenting customers based on income and spending score. We hope these segments make all the difference and help maximize the ROI of the marketing campaign budget. 
 
 
