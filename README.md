@@ -1,9 +1,9 @@
 # mall-customer-segmentation
 
+### Objective: Create an unsupervised model using the KMeans algorithm to segment customers into the most optimal number of groups based on key metrics given.  
+
 ## Introduction
    As a data scientist for a marketing company, a client has recently acquired a mall in Saint Louis, Missouri and has contacted us to help identify different groups among the customer demographic so the owner can use these segments to accurately plan the marketing strategy. The only data we have is from a previous owner, where they collected certain metrics about the customers.
-  
-### Objective: Create an unsupervised model using the KMeans algorithm to segment customers into the most optimal number of groups based on key metrics given.  
   
 Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python)
 
